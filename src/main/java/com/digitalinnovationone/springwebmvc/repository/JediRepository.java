@@ -9,12 +9,21 @@ import com.digitalinnovationone.springwebmvc.model.Jedi;
 
 @Repository
 public class JediRepository {
-	
-	public List<Jedi> getAllJedi(){
-		
-		final List<Jedi> jedi = new ArrayList<>();
+
+	private List<Jedi> jedi;
+
+	public JediRepository() {
+		jedi = new ArrayList<>();
 		jedi.add(new Jedi("Luke", "Skywalker"));
-		return jedi;
+	}
+
+	public List<Jedi> getAllJedi() {
+
+		return this.jedi;
+	}
+
+	public void add(Jedi jedi) {
+		this.jedi.add(jedi);
 	}
 
 }
